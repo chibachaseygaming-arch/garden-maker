@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sprout & Soil</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="topbar" aria-label="Garden status">
+        <div>
+          <p class="eyebrow">Day <span id="day">1</span></p>
+          <h1>Sprout & Soil</h1>
+        </div>
+        <div class="stats" aria-live="polite">
+          <div>
+            <span>Coins</span>
+            <strong id="coins">12</strong>
+          </div>
+          <div>
+            <span>Seeds</span>
+            <strong id="seeds">8</strong>
+          </div>
+          <div>
+            <span>Harvests</span>
+            <strong id="harvests">0</strong>
+          </div>
+          <div>
+            <span>Land</span>
+            <strong id="land">12</strong>
+          </div>
+          <div>
+            <span>Tax Due</span>
+            <strong id="tax-day">7</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="control-panel" aria-label="Garden controls">
+        <div class="toolbar" aria-label="Garden tools">
+          <button class="tool active" data-tool="plant" type="button" aria-pressed="true">
+            <span aria-hidden="true">+</span>
+            Plant
+          </button>
+          <button class="tool" data-tool="water" type="button" aria-pressed="false">
+            <span aria-hidden="true">~</span>
+            Water
+          </button>
+          <button class="tool" data-tool="harvest" type="button" aria-pressed="false">
+            <span aria-hidden="true">$</span>
+            Harvest
+          </button>
+        </div>
+        <div id="seed-picker" class="seed-picker" aria-label="Seed picker"></div>
+      </section>
+
+      <section class="garden-wrap">
+        <div id="garden" class="garden" aria-label="Garden bed"></div>
+      </section>
+
+      <section class="log-panel" aria-label="Game messages">
+        <p id="message">Pick a patch of soil to plant your first seeds.</p>
+        <div class="actions">
+          <button id="start-minigame" type="button">Spray Game</button>
+          <button id="buy-seeds" type="button">Buy Seeds</button>
+          <button id="buy-land" type="button">Buy Land $1000</button>
+          <button id="next-day" type="button">Next Day</button>
+        </div>
+      </section>
+
+      <section id="minigame-panel" class="minigame-panel" aria-label="Spray bottle minigame" hidden>
+        <div class="minigame-head">
+          <div>
+            <p class="eyebrow">Spray Bottle</p>
+            <h2>Worm Rush</h2>
+          </div>
+          <div class="minigame-stats" aria-live="polite">
+            <span>Time <strong id="minigame-time">15</strong></span>
+            <span>Score <strong id="minigame-score">0</strong></span>
+          </div>
+        </div>
+        <div id="minigame-board" class="minigame-board" aria-label="Worm targets"></div>
+        <div class="minigame-actions">
+          <button id="restart-minigame" type="button">Restart</button>
+          <button id="close-minigame" type="button">Close</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
